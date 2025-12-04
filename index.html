@@ -4,17 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <link rel="stylesheet" href="style.css" />
   <title>GreenSense – Smart Insights for Greenhouse Farmers</title>
 </head>
+
 <body>
-  <!-- HEADER -->
+
   <header class="site-header">
     <div class="container nav-container">
       <a href="#hero" class="brand">
@@ -29,14 +26,10 @@
         <a href="#cta">Get Started</a>
       </nav>
 
-      <div class="header-actions">
-        <button class="theme-toggle"><i class="fas fa-moon"></i></button>
-        <button class="nav-toggle"><span></span><span></span><span></span></button>
-      </div>
+      <button class="nav-toggle"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="hero" class="hero reveal">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -77,7 +70,6 @@
     </div>
   </section>
 
-  <!-- FEATURES -->
   <section id="features" class="section features reveal">
     <div class="container">
       <h2 class="section-title">Why farmers choose GreenSense</h2>
@@ -102,14 +94,11 @@
     </div>
   </section>
 
-  <!-- VISUAL DASHBOARD MOCKUP -->
   <section id="visual" class="section visual reveal">
     <div class="container visual-grid">
       <div class="visual-text">
         <h2 class="section-title">Your farm, visualized clearly</h2>
-        <p>
-          GreenSense automatically analyzes your sales & expenses and converts them into insights.
-        </p>
+        <p>GreenSense automatically analyzes your sales & expenses and transforms them into insights.</p>
 
         <ul>
           <li>Profit per crop</li>
@@ -125,7 +114,6 @@
         </div>
 
         <div class="dash-layout">
-          <!-- Line chart -->
           <div class="dash-main">
             <p class="dash-label">Profit per crop</p>
             <div class="dash-chart-line">
@@ -137,7 +125,6 @@
             </div>
           </div>
 
-          <!-- Bars + crops -->
           <div class="dash-side">
             <div class="dash-card">
               <p class="dash-label">Expenses (weekly)</p>
@@ -163,7 +150,6 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section class="section gallery reveal">
     <div class="container">
       <h2 class="section-title">Designed for real greenhouses</h2>
@@ -188,7 +174,6 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section id="info" class="section info reveal">
     <div class="container info-grid">
       <div>
@@ -197,7 +182,7 @@
           <li>Log your purchases and sales.</li>
           <li>GreenSense analyzes your data automatically.</li>
           <li>Receive insights and alerts.</li>
-          <li>Adjust planting and selling strategies.</li>
+          <li>Adjust planting and selling strategy.</li>
         </ol>
       </div>
 
@@ -213,7 +198,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section id="cta" class="section cta reveal">
     <div class="container cta-inner">
       <div>
@@ -225,7 +209,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -252,25 +235,12 @@
     <p class="footer-bottom">© 2025 GreenSense. All rights reserved.</p>
   </footer>
 
-  <!-- JS -->
   <script>
-    /* Theme toggle */
-    const themeToggle = document.querySelector('.theme-toggle');
-    const icon = themeToggle.querySelector('i');
 
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-theme');
-      document.body.classList.contains('light-theme')
-        ? (icon.className = 'fas fa-sun')
-        : (icon.className = 'fas fa-moon');
-    });
-
-    /* Mobile nav */
     document.querySelector('.nav-toggle').addEventListener('click', () => {
       document.body.classList.toggle('nav-open');
     });
 
-    /* Reveal animation */
     const reveals = document.querySelectorAll('.reveal');
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -283,7 +253,6 @@
 
     reveals.forEach((r) => revealObs.observe(r));
 
-    /* Stat counter */
     const stats = document.querySelectorAll('.stat-number');
     const statObs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -300,7 +269,7 @@
               clearInterval(interval);
             }
             el.textContent = current;
-          }, 30);
+          }, 20);
 
           statObs.unobserve(el);
         }
