@@ -329,6 +329,15 @@ body.nav-open .main-nav {
   margin-top: 0.8rem;
 }
 
+/* ✅ Make title and subtitle readable on dark visual background */
+.visual .section-title {
+  color: #fefce8;
+}
+
+.visual .section-subtitle {
+  color: #c2d4c7;
+}
+
 /* Dashboard mockup card */
 .visual-mockup {
   background: #ffffff;
