@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>GreenSense – Smart Insights for Small Greenhouse Farmers</title>
+  <title>GreenSense – Smart Insights for Greenhouse Farmers</title>
 </head>
 <body>
-  <!-- HEADER / NAV -->
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="#hero" class="brand">
-        <img src="images/greensense-logo.png" alt="GreenSense logo" class="brand-logo" />
+        <img src="images/greensense-logo.png" class="brand-logo" alt="GreenSense Logo">
         <span class="brand-name">Green<span>Sense</span></span>
       </a>
+
       <nav class="main-nav">
-        <a href="#features">Why GreenSense</a>
+        <a href="#features">Features</a>
         <a href="#visual">Insights</a>
         <a href="#info">How It Works</a>
         <a href="#cta">Get Started</a>
@@ -24,120 +26,142 @@
   </header>
 
   <main>
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section id="hero" class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="tagline">Smart insights for small greenhouse farmers</p>
-          <h1>Turn everyday farm transactions into powerful decisions.</h1>
+          <p class="tagline">Smart insights for greenhouse farmers</p>
+          <h1>Grow smarter, not harder.</h1>
           <p class="hero-text">
-            GreenSense helps greenhouse farmers track expenses, sales, and crop performance — 
-            revealing which crops are profitable and which ones are costing you money.
+            GreenSense helps greenhouse farmers track expenses, sales, and crop performance,
+            revealing which crops truly earn profit.
           </p>
+
           <div class="hero-actions">
             <button class="btn primary">Get Started Free</button>
             <button class="btn ghost">View Sample Report</button>
           </div>
-          <p class="hero-note">Simple to use · No spreadsheets needed · Made for real farmers</p>
+          <p class="hero-note">Simple · Accurate · No spreadsheets needed</p>
         </div>
 
-        <!-- HERO IMAGE -->
         <div class="hero-media">
-          <img
-            src="images/greenhouse-hero.jpg"
-            alt="Greenhouse with healthy plants"
-          />
+          <img src="images/greenhouse-hero.jpg" alt="Greenhouse hero image">
         </div>
       </div>
     </section>
 
-    <!-- FEATURES SECTION -->
+    <!-- FEATURES -->
     <section id="features" class="section features">
       <div class="container">
-        <h2 class="section-title">Why small greenhouse farmers need GreenSense</h2>
-        <p class="section-subtitle">
-          GreenSense fixes the most common problems farmers face.
-        </p>
+        <h2 class="section-title">Why farmers choose GreenSense</h2>
+        <p class="section-subtitle">Powerful insights, simple tools.</p>
 
         <div class="features-grid">
           <div class="feature-card">
             <h3>Fix financial blind spots</h3>
-            <p>
-              Track all expenses and sales so you finally see the real profit per crop.
-            </p>
+            <p>See the real profit per crop from seeds to harvest.</p>
           </div>
 
           <div class="feature-card">
             <h3>Reduce waste</h3>
-            <p>
-              Grow the crops that sell best and avoid overplanting that leads to losses.
-            </p>
+            <p>Grow only what sells. Avoid losses from overplanting.</p>
           </div>
 
           <div class="feature-card">
             <h3>Stabilize income</h3>
-            <p>
-              Identify reliable buyers and detect rising costs before they impact your earnings.
-            </p>
+            <p>Identify reliable buyers and track rising expenses.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DASHBOARD VISUAL SECTION -->
+    <!-- DASHBOARD MOCKUP (PURE HTML) -->
     <section id="visual" class="section visual">
       <div class="container visual-grid">
         <div class="visual-text">
-          <h2 class="section-title">Your greenhouse performance at a glance</h2>
+          <h2 class="section-title">Your farm, visualized clearly</h2>
           <p>
-            Log your purchases and sales — GreenSense automatically calculates profit per crop,
-            finds trends, and sends alerts when something needs attention.
+            GreenSense automatically analyzes your sales & expenses and converts them into
+            insights that guide planting and selling decisions.
           </p>
           <ul>
-            <li>Automatic profit & cost calculations</li>
-            <li>Easy-to-read charts and summaries</li>
-            <li>Alerts for rising expenses or low performance</li>
+            <li>Profit per crop</li>
+            <li>Seasonal trends</li>
+            <li>Expense alerts</li>
           </ul>
         </div>
 
-        <!-- DASHBOARD MOCKUP IMAGE -->
         <div class="visual-mockup">
-          <img
-            src="images/dashboard-mockup.png"
-            alt="GreenSense dashboard mockup"
-          />
+          <div class="dash-header">
+            <div class="dash-logo"></div>
+            <span class="dash-title">GreenSense Dashboard</span>
+          </div>
+
+          <div class="dash-layout">
+            <!-- Line chart -->
+            <div class="dash-main">
+              <p class="dash-label">Profit per crop</p>
+              <div class="dash-chart-line">
+                <span class="point"></span>
+                <span class="point"></span>
+                <span class="point"></span>
+                <span class="point"></span>
+                <span class="point"></span>
+              </div>
+            </div>
+
+            <!-- Bars + crop list -->
+            <aside class="dash-side">
+              <div class="dash-card">
+                <p class="dash-label">Expenses (weekly)</p>
+                <div class="dash-chart-bars">
+                  <span class="bar bar-1"></span>
+                  <span class="bar bar-2"></span>
+                  <span class="bar bar-3"></span>
+                  <span class="bar bar-4"></span>
+                </div>
+              </div>
+
+              <div class="dash-card">
+                <p class="dash-label">Crop Overview</p>
+                <ul class="dash-table">
+                  <li><span>Tomatoes</span> <span class="pill pill-good">High profit</span></li>
+                  <li><span>Lettuce</span> <span class="pill">Stable</span></li>
+                  <li><span>Strawberries</span> <span class="pill pill-warn">High cost</span></li>
+                </ul>
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY WITH REAL PHOTOS -->
+    <!-- GALLERY -->
     <section class="section gallery">
       <div class="container">
-        <h2 class="section-title">Made for real greenhouses</h2>
-        <p class="section-subtitle">
-          GreenSense supports you from planting to selling.
-        </p>
+        <h2 class="section-title">Designed for real greenhouses</h2>
+        <p class="section-subtitle">Grow confidently with real insights.</p>
 
         <div class="gallery-grid">
           <figure>
-            <img src="images/greenhouse-closeup.jpg" alt="Close-up of plants inside a greenhouse" />
-            <figcaption>Track crop costs from seed to harvest.</figcaption>
+            <img src="images/greenhouse-closeup.jpg">
+            <figcaption>Track cost from seed to harvest.</figcaption>
           </figure>
 
           <figure>
-            <img src="images/farmers-market.jpg" alt="Farmer selling produce" />
-            <figcaption>See which buyers and markets bring in the most profit.</figcaption>
+            <img src="images/farmers-market.jpg">
+            <figcaption>Identify your best-selling markets.</figcaption>
           </figure>
 
           <figure>
-            <img src="images/greenhouse-hero.jpg" alt="Greenhouse wide shot" />
-            <figcaption>Plan your next season using real performance data.</figcaption>
+            <img src="images/greenhouse-hero.jpg">
+            <figcaption>Plan next season with confidence.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- INFO / HOW IT WORKS -->
+    <!-- INFO SECTION -->
     <section id="info" class="section info">
       <div class="container info-grid">
         <div>
@@ -145,8 +169,8 @@
           <ol class="steps">
             <li>Log your purchases and sales.</li>
             <li>GreenSense analyzes your data automatically.</li>
-            <li>Get alerts about costs, trends, and crop performance.</li>
-            <li>Adjust your planting and selling strategy.</li>
+            <li>Receive alerts & insights.</li>
+            <li>Adjust planting & selling strategy.</li>
           </ol>
         </div>
 
@@ -154,27 +178,25 @@
           <h3>Perfect for</h3>
           <ul>
             <li>Small greenhouse farmers</li>
-            <li>Indoor or vertical farms</li>
-            <li>Market sellers & local suppliers</li>
-            <li>Anyone who wants to grow smarter</li>
+            <li>Indoor farms</li>
+            <li>Market vendors</li>
+            <li>Beginner growers</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <!-- CTA SECTION -->
+    <!-- CTA -->
     <section id="cta" class="section cta">
       <div class="container cta-inner">
         <div>
-          <h2>Start growing with confidence.</h2>
-          <p>
-            Track your expenses and sales, understand your profit per crop,
-            and make better decisions for your farm.
-          </p>
+          <h2>Start growing profitably today.</h2>
+          <p>Track your greenhouse performance and make smarter farming decisions.</p>
         </div>
         <button class="btn primary large">Sign Up Now</button>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -187,17 +209,19 @@
 
       <div>
         <h3>Contact</h3>
-        <p>Email: support@greensense.farm</p>
+        <p>Email: support@greensense.com</p>
         <p>Phone: +63 900 000 0000</p>
       </div>
 
       <div>
         <h3>Follow</h3>
-        <p>Facebook · Instagram · Official Website</p>
+        <p>Facebook · Instagram · Website</p>
       </div>
     </div>
+
     <p class="footer-bottom">© 2025 GreenSense. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
 
