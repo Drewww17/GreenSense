@@ -42,12 +42,12 @@
           </p>
 
           <div class="hero-actions">
-            <button class="btn primary">Get Started Free</button>
-            <button class="btn ghost">View Sample Report</button>
+            <!-- Buttons now scroll to sections -->
+            <a href="#cta" class="btn primary">Get Started Free</a>
+            <a href="#visual" class="btn ghost">View Sample Report</a>
           </div>
           <p class="hero-note">Simple · Accurate · No spreadsheets needed</p>
 
-          <!-- small “stat” row for extra visual interest -->
           <div class="hero-stats">
             <div class="hero-stat">
               <span class="stat-number" data-target="24">0</span>
@@ -213,7 +213,7 @@
           <h2>Start growing profitably today.</h2>
           <p>Track your greenhouse performance and make smarter farming decisions.</p>
         </div>
-        <button class="btn primary large">Sign Up Now</button>
+        <a href="#hero" class="btn primary large">Sign Up Now</a>
       </div>
     </section>
   </main>
@@ -241,13 +241,15 @@
     <p class="footer-bottom">© 2025 GreenSense. All rights reserved.</p>
   </footer>
 
+  <!-- INTERACTIVITY SCRIPT -->
   <script>
+    // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
-    const header = document.querySelector('.site-header');
     navToggle.addEventListener('click', () => {
       document.body.classList.toggle('nav-open');
     });
 
+    // Scroll reveal animation
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(
       entries => {
@@ -262,6 +264,7 @@
     );
     reveals.forEach(section => observer.observe(section));
 
+    // Stat counter animation in hero
     const statNumbers = document.querySelectorAll('.stat-number');
     const statObserver = new IntersectionObserver(
       entries => {
@@ -289,4 +292,5 @@
   </script>
 </body>
 </html>
+
 
