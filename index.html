@@ -7,12 +7,11 @@
   <title>GreenSense – Smart Insights for Greenhouse Farmers</title>
 </head>
 <body>
-
   <!-- HEADER -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="#hero" class="brand">
-        <img src="images/greensense-logo.png" class="brand-logo" alt="GreenSense Logo">
+        <img src="images/greensense-logo.png" class="brand-logo" alt="GreenSense Logo" />
         <span class="brand-name">Green<span>Sense</span></span>
       </a>
 
@@ -22,12 +21,17 @@
         <a href="#info">How It Works</a>
         <a href="#cta">Get Started</a>
       </nav>
+
+      <!-- Mobile menu button -->
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero reveal">
       <div class="container hero-grid">
         <div class="hero-content">
           <p class="tagline">Smart insights for greenhouse farmers</p>
@@ -42,41 +46,57 @@
             <button class="btn ghost">View Sample Report</button>
           </div>
           <p class="hero-note">Simple · Accurate · No spreadsheets needed</p>
+
+          <!-- small “stat” row for extra visual interest -->
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="stat-number" data-target="24">0</span>
+              <span class="stat-label">months of trends</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-number" data-target="18">0</span>
+              <span class="stat-label">crops monitored</span>
+            </div>
+            <div class="hero-stat">
+              <span class="stat-number" data-target="32">0</span>
+              <span class="stat-label">active buyers</span>
+            </div>
+          </div>
         </div>
 
         <div class="hero-media">
-          <img src="images/greenhouse-hero.jpg" alt="Greenhouse hero image">
+          <img src="images/greenhouse-hero.jpg" alt="Greenhouse hero image" />
         </div>
       </div>
     </section>
 
     <!-- FEATURES -->
-    <section id="features" class="section features">
+    <section id="features" class="section features reveal">
       <div class="container">
         <h2 class="section-title">Why farmers choose GreenSense</h2>
         <p class="section-subtitle">Powerful insights, simple tools.</p>
 
         <div class="features-grid">
-          <div class="feature-card">
+          <article class="feature-card">
             <h3>Fix financial blind spots</h3>
             <p>See the real profit per crop from seeds to harvest.</p>
-          </div>
+          </article>
 
-          <div class="feature-card">
+          <article class="feature-card">
             <h3>Reduce waste</h3>
             <p>Grow only what sells. Avoid losses from overplanting.</p>
-          </div>
+          </article>
 
-          <div class="feature-card">
+          <article class="feature-card">
             <h3>Stabilize income</h3>
             <p>Identify reliable buyers and track rising expenses.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- DASHBOARD MOCKUP (PURE HTML) -->
-    <section id="visual" class="section visual">
+    <!-- DASHBOARD MOCKUP -->
+    <section id="visual" class="section visual reveal">
       <div class="container visual-grid">
         <div class="visual-text">
           <h2 class="section-title">Your farm, visualized clearly</h2>
@@ -137,32 +157,32 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="section gallery">
+    <section class="section gallery reveal">
       <div class="container">
         <h2 class="section-title">Designed for real greenhouses</h2>
         <p class="section-subtitle">Grow confidently with real insights.</p>
 
         <div class="gallery-grid">
           <figure>
-            <img src="images/greenhouse-closeup.jpg">
+            <img src="images/greenhouse-closeup.jpg" alt="Close-up of plants" />
             <figcaption>Track cost from seed to harvest.</figcaption>
           </figure>
 
           <figure>
-            <img src="images/farmers-market.jpg">
+            <img src="images/farmers-market.jpg" alt="Farmers market" />
             <figcaption>Identify your best-selling markets.</figcaption>
           </figure>
 
           <figure>
-            <img src="images/greenhouse-hero.jpg">
+            <img src="images/greenhouse-hero.jpg" alt="Greenhouse view" />
             <figcaption>Plan next season with confidence.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- INFO SECTION -->
-    <section id="info" class="section info">
+    <!-- INFO -->
+    <section id="info" class="section info reveal">
       <div class="container info-grid">
         <div>
           <h2 class="section-title">How GreenSense works</h2>
@@ -187,7 +207,7 @@
     </section>
 
     <!-- CTA -->
-    <section id="cta" class="section cta">
+    <section id="cta" class="section cta reveal">
       <div class="container cta-inner">
         <div>
           <h2>Start growing profitably today.</h2>
@@ -196,7 +216,6 @@
         <button class="btn primary large">Sign Up Now</button>
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -222,6 +241,52 @@
     <p class="footer-bottom">© 2025 GreenSense. All rights reserved.</p>
   </footer>
 
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const header = document.querySelector('.site-header');
+    navToggle.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    reveals.forEach(section => observer.observe(section));
+
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target, 10);
+            let current = 0;
+            const step = Math.max(1, Math.round(target / 40));
+            const interval = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                current = target;
+                clearInterval(interval);
+              }
+              el.textContent = current;
+            }, 30);
+            statObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.7 }
+    );
+    statNumbers.forEach(n => statObserver.observe(n));
+  </script>
 </body>
 </html>
 
